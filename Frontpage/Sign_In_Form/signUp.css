@@ -1,0 +1,364 @@
+:root {
+  --primary: #2e7d32;      /* Forest Green */
+  --primary-dark: #1b5e20;
+  --secondary: #f0fdf4;    /* Light Green Bg */
+  --text-dark: #1a1a1a;
+  --text-light: #666;
+  --white: #ffffff;
+  --orange: #FF9800;
+  --fb-blue: #3b5998;
+  --google-gray: #4285F4;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--white);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --- The Curved Background --- */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: var(--primary);
+  /* This creates the curved bottom effect */
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+  z-index: -1;
+}
+
+/* --- Floating "Fruit" Decor --- */
+.decor-circle {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+/* Top Right (Simulating the Kiwi) */
+.decor-1 {
+  top: 5%;
+  right: 5%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #aed581 0%, #33691e 100%);
+  border: 4px solid white;
+}
+
+/* Middle Left (Simulating the Strawberry) */
+.decor-2 {
+  top: 40%;
+  left: 10%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #ff5252 0%, #b71c1c 100%);
+  border: 4px solid white;
+}
+
+/* --- Main Card --- */
+.login-container {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.login-card {
+  background: white;
+  width: 100%;
+  max-width: 900px; /* Wide card like reference */
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  padding: 40px 50px;
+  text-align: center;
+  position: relative;
+}
+
+.card-header {
+  margin-bottom: 20px;
+}
+
+.form-logo {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.card-header h1 {
+  color: var(--primary); /* Reference uses Blue, we use NutriAi Green */
+  margin: 0;
+  font-size: 2rem;
+}
+
+/* --- Info Box --- */
+.info-box {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+  margin-bottom: 40px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.info-box i {
+  font-size: 1.5rem;
+  color: #777;
+}
+
+.info-box p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --- Login Body Grid --- */
+.login-body {
+  display: grid;
+  grid-template-columns: 1fr 50px 1fr; /* Form - Divider - Social */
+  gap: 20px;
+  align-items: start;
+}
+
+/* Input Styling */
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--primary); /* Green labels like reference */
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  cursor: pointer;
+}
+
+/* Actions (Checkbox & Link) */
+.form-actions {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.checkbox-container input {
+  accent-color: var(--primary);
+  width: 16px;
+  height: 16px;
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-submit {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-transform: uppercase;
+}
+
+.btn-submit:hover {
+  background: var(--primary-dark);
+}
+
+.forgot-pass {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.forgot-pass:hover {
+  text-decoration: underline;
+}
+
+/* --- Divider --- */
+.divider {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #eee;
+}
+
+.divider span {
+  background: white;
+  padding: 5px 0;
+  z-index: 2;
+  color: #999;
+  font-size: 0.8rem;
+  font-weight: bold;
+  align-self: center;
+}
+
+/* --- Social Buttons --- */
+.social-login {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align icon left */
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: white;
+}
+
+.btn-social i {
+  width: 30px; /* Fixed width for icon alignment */
+  font-size: 1.1rem;
+}
+
+.btn-social.fb {
+  background: var(--fb-blue);
+}
+
+.btn-social.google {
+  background: #fff;
+  color: #555;
+  border: 1px solid #ddd;
+}
+.btn-social.google i {
+  /* Google colors usually multicolor, using plain for simplicity */
+  color: var(--google-gray); 
+}
+
+.btn-social.apple {
+  background: #000;
+}
+
+.btn-social:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* --- Footer --- */
+.card-footer {
+  margin-top: 40px;
+  font-size: 1rem;
+}
+
+.card-footer a {
+  color: var(--primary);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card-footer a:hover {
+  text-decoration: underline;
+}
+
+/* --- Responsive Mobile --- */
+@media (max-width: 768px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+  
+  .login-body {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .divider {
+    height: auto;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .divider::before {
+    width: 100%;
+    height: 1px;
+    left: 0;
+    top: 50%;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+
+  .forgot-pass {
+    text-align: center;
+  }
+}
