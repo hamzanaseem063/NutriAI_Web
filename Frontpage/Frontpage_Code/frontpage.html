@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NutriAi | Your Personal AI Nutritionist</title>
+  <link rel="stylesheet" href="frontpage.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="New folder/logo2.png" alt="NutriAi Logo" />
+    </div>
+
+    <nav class="nav-menu">
+      <ul class="nav-links">
+         <a href="Community%20Forum%20page/Forum%20Code/forum.html" class="cta-btn secondary">
+   <i class="fas fa-users"></i> Forum
+</a>
+        
+        <li class="dropdown">
+          <a href="#features" class="drop-btn">Features ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="#"><i class="fab fa-apple"></i> iOS & iPad App</a></li>
+            <li><a href="#"><i class="fab fa-android"></i> Android App</a></li>
+            <li><a href="#"><i class="fas fa-watch"></i> Smart Watch</a></li>
+            <li><a href="#"><i class="fas fa-star"></i> User Reviews</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#diets" class="drop-btn">Diets ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="#">🔥 Calorie Counting</a></li>
+            <li><a href="#">🥑 Low-Carb & Keto</a></li>
+            <li><a href="#">🥩 High-Protein</a></li>
+            <li><a href="#">🌱 Vegan & Vegetarian</a></li>
+            <li><a href="#">🥗 Mediterranean</a></li>
+            <li><a href="#">❤️ DASH Diet</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#library" class="drop-btn">Library ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="#">📚 Weight Loss Blog</a></li>
+            <li><a href="#">📖 Diet Library</a></li>
+            <li><a href="#">👨‍⚕️ Dietitian Team</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#food" class="drop-btn">Food ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="#">🔍 Food Search</a></li>
+            <li><a href="#">📊 Database Licensing & API</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#business" class="drop-btn">Business ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="#">🤝 Professional Connect</a></li>
+            <li><a href="#">🏥 Find Healthcare Professional</a></li>
+            <li><a href="#">🩺 For Healthcare Professionals</a></li>
+            <li><a href="#">🏋️ For Trainers and Clubs</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="auth-buttons">
+      <a href="signUp.html" class="btn-signin">SIGN IN</a>
+      <a href="register.html" class="btn-signup">SIGN UP</a>
+    </div>
+
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">
+      <span></span><span></span><span></span>
+    </button>  
+
+  </div>
+</header>
+
+<main>
+  <section class="hero-slider" id="heroSlider">
+    
+    <div class="slider-wrapper">
+      <div class="slide active">
+        <div class="slide-content">
+          <span class="badge">New Release</span>
+          <h1>Let's Begin Your Healthiest Journey <span>Together</span></h1>
+          <p>Personalized nutrition plans powered by AI to help you reach your peak performance.</p>
+          <div class="cta-group">
+            <a href="#" class="cta-btn primary">Get Started Now</a>
+            <a href="#" class="cta-btn secondary">Watch Demo</a>
+            <a href="Community%20Forum%20page/Forum%20Code/forum.html" class="cta-btn secondary">
+   <i class="fas fa-users"></i> Community Forum
+</a>
+          </div>
+        </div>
+        <div class="slide-image">
+          <img src="New folder/slide 2.jpg" alt="Healthy Food">
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-content">
+          <h1>Your Personal AI Nutrition Guide</h1>
+          <p>Smart, Personalized, and Effective. Tracking your macros has never been this easy.</p>
+          <div class="cta-group">
+            <a href="#" class="cta-btn primary">Start For Free</a>
+          </div>
+        </div>
+        <div class="slide-image">
+          <img src="New folder/slide 1.jpg" alt="Nutrition">
+        </div>
+      </div>
+    </div>
+
+    <button class="arrow left-arrow" onclick="changeSlide(-1)">❮</button>
+    <button class="arrow right-arrow" onclick="changeSlide(1)">❯</button>
+    <div class="slider-dots"></div>  
+    
+  </section>
+
+  <section class="trusted-by">
+    <p>TRUSTED BY HEALTH ENTHUSIASTS & APPS</p>
+    <div class="logos-row">
+      <span><i class="fab fa-apple"></i> Health</span>
+      <span><i class="fab fa-google"></i> Fit</span>
+      <span><i class="fas fa-heartbeat"></i> Fitbit</span>
+      <span><i class="fas fa-running"></i> Strava</span>
+      <span><i class="fas fa-leaf"></i> WholeFoods</span>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="section-header">
+      <h2>Why Choose <span>NutriAi?</span></h2>
+      <p>We combine human expertise with Artificial Intelligence to transform your health.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon"><i class="fas fa-robot"></i></div>
+        <h3>AI Meal Analysis</h3>
+        <p>Take a photo of your food, and our AI calculates calories and macros instantly.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><i class="fas fa-utensils"></i></div>
+        <h3>Smart Meal Plans</h3>
+        <p>Personalized recipes based on your allergies, goals, and local grocery prices.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Progress Tracking</h3>
+        <p>See your transformation with deep data insights and predictive health trends.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <div class="section-header">
+      <h2>How It <span>Works</span></h2>
+      <p>Three simple steps to a healthier you.</p>
+    </div>
+    <div class="steps-container">
+      <div class="step-box">
+        <div class="step-number">1</div>
+        <h4>Snap Your Food</h4>
+        <p>Just point your camera at your meal. No manual entry required.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-number">2</div>
+        <h4>Get Instant Data</h4>
+        <p>Our AI identifies ingredients and calculates your macros in seconds.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-number">3</div>
+        <h4>Track & Improve</h4>
+        <p>Syncs with your health apps to keep you on target for your goals.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial-section">
+    <div class="testimonial-card">
+      <div class="quote-icon">“</div>
+      <p>After years of struggling, I finally found NutriAi. They helped me develop a healthy relationship with food and my body. I feel great!</p>
+      <div class="user-info">
+        <img src="https://ui-avatars.com/api/?name=Jane+T&background=2e7d32&color=fff" alt="User">
+        <div>
+          <strong>Jane T.</strong>
+          <span>Omaha, NE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="cta-content">
+      <h2>Ready to transform your life?</h2>
+      <p>Join 10,000+ happy users today.</p>
+      <a href="signup.html" class="btn-signup-large">Start Free Trial</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-top">
+      
+      <div class="footer-brand-col">
+        <div class="footer-logo">
+          <img src="New folder/logo2.png" alt="NutriAi">
+
+        </div>
+        <div class="rating-block">
+          <span class="stars">★★★★★</span>
+          <span>4.9/5 Rating</span>
+        </div>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-link-col">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">API</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-link-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Diet Library</a></li>
+          <li><a href="#">Help Center</a></li>
+           <li><a href="Community%20Forum%20page/Forum%20Code/forum.html">Community Forum</a></li>
+          <li><a href="#">Help Center</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-link-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-link-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 NutriAi Inc. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="frontpage.js"></script>
+</body>
+</html>
