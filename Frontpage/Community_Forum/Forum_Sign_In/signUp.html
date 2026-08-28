@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | NutriAi Community</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="login-container">
+    <div class="login-card">
+        <!-- Added Logo for professionalism -->
+        <div class="logo">Nutri<span>Ai</span></div>
+        <h2>Create Account</h2>
+        <p>Join our professional community</p>
+
+        <form id="signupForm">
+            <!-- Every input needs to be inside an 'input-group' to look good -->
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" id="newName" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" id="newEmail" placeholder="name@example.com" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" id="newPassword" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="login-btn">Create Account</button>
+        </form>
+
+        <div class="login-footer">
+            <span>Already have an account? <a href="login.html">Login</a></span>
+        </div>
+    </div>
+</div>
+
+<script src="signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+/* Update your login.css with these to ensure the Sign Up looks perfect */
+
+:root {
+    --primary: #2e7d32;
+    --bg: #f0fdf4;
+}
+
+body {
+    background: var(--bg);
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* This keeps the card at a professional width */
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+.logo span { color: var(--primary); }
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #334155;
+}
+
+.input-group input {
+    width: 100%; /* Makes inputs fill the card width */
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: inherit;
+    outline: none;
+    box-sizing: border-box; /* Crucial for width alignment */
+}
+
+.input-group input:focus {
+    border-color: var(--primary);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-btn:hover {
+    background: #1b5e20;
+}
