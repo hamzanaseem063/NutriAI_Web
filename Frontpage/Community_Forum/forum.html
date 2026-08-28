@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriAi Community | Healthy Discussions</title>
+    <link rel="stylesheet" href="forum.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="forum-nav">
+    <div class="nav-content">
+        <div class="logo" onclick="location.href='forum.html'" style="cursor:pointer">Nutri<span>Ai</span> Community</div>
+        <div class="search-bar">
+            <input type="text" id="forumSearch" placeholder="Search discussions...">
+        </div>
+        <div class="user-actions" id="authSection">
+            <!-- Filled by JavaScript -->
+        </div>
+    </div>
+</header>
+
+<main class="forum-container">
+    <aside class="forum-sidebar">
+        <button class="new-topic-btn" id="newTopicBtn">+ Start Discussion</button>
+        <nav class="side-nav">
+            <a href="#" class="active" id="showAllBtn">🏠 All Discussions</a>
+            <a href="#">🥗 Recipe Swap</a>
+            <a href="#">🤖 AI Help & Feedback</a>
+            <a href="#">🏆 Success Stories</a>
+        </nav>
+    </aside>
+
+    <!-- Main Feed Section -->
+    <section class="forum-feed" id="feedContainer">
+        <div class="feed-header">
+            <h2>Latest Discussions</h2>
+        </div>
+        <div id="postsList">
+            <!-- Dynamic Posts Go Here -->
+        </div>
+    </section>
+
+    <!-- Detailed Thread View (Hidden by default) -->
+    <section class="thread-view" id="threadContainer" style="display:none;">
+        <button class="back-btn" id="backBtn">← Back to Feed</button>
+        <div id="threadContent"></div>
+        <hr>
+        <div class="reply-section">
+            <h4>Replies</h4>
+            <div id="repliesList"></div>
+            <div class="reply-input-box">
+                <textarea id="replyMessage" placeholder="Write a professional reply..."></textarea>
+                <button class="submit-topic" id="postReplyBtn">Post Reply</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- New Topic Modal -->
+<div id="topicModal" class="modal">
+    <div class="modal-content">
+        <h3>Start a New Discussion</h3>
+        <form id="newTopicForm">
+            <input type="text" id="tTitle" placeholder="Discussion Title" required>
+            <select id="tCategory">
+                <option>Recipe Swap</option>
+                <option>AI Help & Feedback</option>
+                <option>Success Story</option>
+            </select>
+            <textarea id="tMessage" rows="5" placeholder="Details..." required></textarea>
+            <div class="modal-btns">
+                <button type="button" class="cancel-btn" id="closeModal">Cancel</button>
+                <button type="submit" class="submit-topic">Publish Post</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="forum.js"></script>
+</body>
+</html>
