@@ -1,0 +1,869 @@
+:root {
+  --primary: #2e7d32;      /* Forest Green */
+  --primary-dark: #1b5e20;
+  --secondary: #f0fdf4;    /* Light Green Bg */
+  --text-dark: #1a1a1a;
+  --text-light: #666;
+  --white: #ffffff;
+  --orange-grad: linear-gradient(90deg, #FFB74D 0%, #FF9800 100%); /* New Orange */
+  --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+/* =========================================
+   UPDATED NAVBAR STYLES
+   ========================================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.nav-container {
+  width: 95%;       
+  max-width: 1400px; 
+  margin: 0 auto;    
+  padding: 0 20px;   
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo img {
+  height: 60px; /* Adjusted height to fit navbar */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* --- Center Navigation --- */
+.nav-menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Centers items */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #FF9800; /* Orange highlight on hover */
+}
+
+/* --- Dropdowns --- */
+.dropdown {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 60px; /* Below navbar */
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: white;
+  min-width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1100;
+  border-top: 4px solid var(--primary);
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-content li {
+  display: block;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  color: #555;
+  border-bottom: 1px solid #f5f5f5;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  background: var(--secondary);
+  color: var(--primary);
+  padding-left: 25px; /* Slight slide animation */
+}
+
+/* --- Auth Buttons (Top Right) --- */
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Green Outline Button */
+.btn-signin {
+  text-decoration: none;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-signin:hover {
+  background: var(--secondary);
+}
+
+/* Orange Gradient Button */
+.btn-signup {
+  text-decoration: none;
+  color: white;
+  background: var(--orange-grad);
+  padding: 10px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+  transition: var(--transition);
+  border: none;
+  white-space: nowrap;
+}
+
+.btn-signup:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+}
+
+
+/* =========================================
+   EXISTING SECTIONS (Hero, Services, etc.)
+   ========================================= */
+
+/* Hero Slider */
+.hero-slider {
+  height: calc(100vh - 80px);
+  position: relative;
+  overflow: hidden;
+  background: var(--secondary);
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: var(--transition);
+  visibility: hidden;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.slide-content {
+  flex: 1;
+  z-index: 2;
+}
+
+.badge {
+  background: var(--primary);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.slide-content h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.slide-content h1 span {
+  color: var(--primary);
+}
+
+.cta-group {
+  display: flex;
+  gap: 15px;
+}
+
+.cta-btn {
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.cta-btn.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.cta-btn.secondary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+}
+.cta-btn i {
+    margin-right: 8px; /* Adds space between the icon and text */
+}
+
+/* Optional: Add a special hover effect for the Forum link in Navbar */
+.nav-links a[href="forum.html"]:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+.slide-image {
+  flex: 1;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+}
+
+/* Arrows & Dots */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 10;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.left-arrow { left: 20px; }
+.right-arrow { right: 20px; }
+
+.slider-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: var(--primary);
+  transform: scale(1.2);
+}
+
+/* Services */
+.services {
+  padding: 80px 5%;
+  background: #ffffff;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.section-header h2 span {
+  color: var(--primary);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto 0;
+}
+
+.feature-card {
+  padding: 40px;
+  background: #f9fdf9;
+  border-radius: 15px;
+  border: 1px solid #e0eee0;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(46, 125, 50, 0.1);
+  border-color: var(--primary);
+}
+
+.feature-card .icon {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  margin-bottom: 15px;
+  color: #1a1a1a;
+}
+
+/* Testimonials */
+.testimonial-section {
+  padding: 100px 5%;
+  background: var(--secondary);
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  max-width: 800px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.quote-icon {
+  font-size: 80px;
+  color: var(--primary);
+  opacity: 0.2;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-family: serif;
+}
+
+.testimonial-card p {
+  font-size: 1.4rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.user-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.user-info div {
+  text-align: left;
+}
+
+/* Mobile Responsive */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background: var(--primary);
+}
+
+@media (max-width: 968px) {
+  .nav-container { 
+    padding: 0 15px; 
+    /* This ensures logo stays left, buttons/hamburger go right */
+    justify-content: space-between; 
+  }
+  
+  .logo img { 
+    height: 40px; /* Make logo slightly smaller on mobile */
+  }
+  
+  /* 1. MAKE BUTTONS VISIBLE AND SMALLER */
+  .auth-buttons { 
+    display: flex; 
+    gap: 8px; 
+    margin-left: auto; /* Pushes buttons to the right */
+    margin-right: 15px; /* Add space between buttons and hamburger */
+  }
+
+  .btn-signin, .btn-signup {
+    padding: 6px 12px; /* Smaller padding */
+    font-size: 0.8rem; /* Smaller text */
+    white-space: nowrap;
+  }
+  
+  /* 2. SHOW HAMBURGER */
+  .hamburger { 
+    display: flex; 
+  }
+  
+  /* 3. HIDE NAV MENU (It becomes the dropdown) */
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 80px; left: 0; width: 100%;
+    background: white;
+    padding: 20px 0 40px 0;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+    flex-direction: column;
+  }
+
+  .nav-menu.active { display: flex; }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  .nav-links li { width: 100%; }
+  
+  .nav-links a {
+    display: block;
+    padding: 15px 20px;
+    text-align: center;
+  }
+  
+  /* Mobile Dropdown Logic */
+  .dropdown { flex-direction: column; height: auto; }
+  
+  .dropdown-content {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border-top: none;
+    background: #f9f9f9;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+  }
+  
+  .dropdown:hover .dropdown-content { display: block; }
+
+  /* Adjust Slider for Mobile */
+  .slide { flex-direction: column; text-align: center; padding-top: 20px; }
+  .slide-content h1 { font-size: 2rem; }
+  .cta-group { justify-content: center; }
+  .slide-image { width: 100%; height: 40%; margin-top: 20px; }
+}
+
+/* =========================================
+   FOOTER STYLES
+   ========================================= */
+.site-footer {
+  background-color: #f9fdf9; /* Very light green to match brand */
+  border-top: 1px solid #e0eee0;
+  padding: 60px 0 30px;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- Top Section (Grid) --- */
+.footer-top {
+  display: grid;
+  /* 1st column is wider (1.5fr) for logo/social, others are equal */
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Brand Column Styles */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.footer-logo img {
+  height: 60px;
+}
+
+.footer-logo span {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.app-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.store-badge {
+  height: 40px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.store-badge:hover {
+  opacity: 0.8;
+}
+
+.rating-block {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.stars {
+  color: #FF9800; /* Orange stars */
+}
+
+/* Social Icons */
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  color: #666;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.social-links a:hover {
+  border-color: var(--orange-grad);
+  color: #FF9800;
+  transform: translateY(-2px);
+}
+
+/* Link Columns Styles */
+.footer-link-col h4 {
+  color: var(--primary); /* Green Headings */
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.footer-link-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link-col li {
+  margin-bottom: 12px;
+}
+
+.footer-link-col a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.footer-link-col a:hover {
+  color: var(--primary); /* Hover Green */
+  text-decoration: underline;
+}
+
+/* --- Bottom Section --- */
+.footer-divider {
+  height: 1px;
+  background: #e0eee0;
+  margin-bottom: 30px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.copyright {
+  margin: 0;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-legal a {
+  text-decoration: none;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.footer-legal a:hover {
+  color: var(--primary);
+}
+
+/* --- Footer Responsive --- */
+@media (max-width: 968px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr; /* 2 columns on tablet */
+    gap: 40px;
+  }
+  
+  .footer-brand-col {
+    grid-column: 1 / -1; /* Brand takes full width */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-logo { justify-content: center; }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer-top {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    text-align: center;
+  }
+  
+  .footer-legal {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+/* =========================================
+   NEW SECTIONS ADDED (Paste at bottom)
+   ========================================= */
+
+/* --- Trusted By Section --- */
+.trusted-by {
+  background: #fafafa;
+  padding: 30px 5%;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.trusted-by p {
+  color: #999;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.logos-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  opacity: 0.6;
+}
+
+.logos-row span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* --- How It Works Section --- */
+.how-it-works {
+  padding: 80px 5%;
+  background: var(--secondary); /* Light green bg */
+  text-align: center;
+}
+
+.steps-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto 0;
+  flex-wrap: wrap;
+}
+
+.step-box {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  flex: 1;
+  min-width: 280px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.step-box:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  background: var(--orange-grad);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0 auto 20px;
+}
+
+.step-box h4 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+.step-box p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* --- Final CTA Banner --- */
+.cta-banner {
+  background: var(--orange-grad);
+  padding: 80px 5%;
+  text-align: center;
+  color: white;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.btn-signup-large {
+  background: white;
+  color: #FF9800;
+  padding: 15px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.btn-signup-large:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Update Icon Style for Feature Cards */
+.feature-card .icon {
+    color: var(--primary); /* Ensures icons are green */
+}
+
+/* Mobile Tweaks for new sections */
+@media (max-width: 768px) {
+  .logos-row { gap: 20px; }
+  .logos-row span { font-size: 1.2rem; }
+  .cta-content h2 { font-size: 1.8rem; }
+}
